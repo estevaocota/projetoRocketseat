@@ -16,10 +16,12 @@ body * {
 .layout-dark {
     display: flex;
     background: url(./assets/bg-desktop.jpg) no-repeat top center/cover;
+    height: 100vh;
 }
 
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     margin: 56px auto 0px;
     padding: 0 24px;
 }
@@ -59,6 +61,7 @@ body * {
     position: absolute;
     top: 50%;
     right: 0;
+    animation: slide-in 0.2s;
     z-index: 1;
     transform: translateY(-50%);
 }
@@ -135,10 +138,12 @@ footer {
     display: none;
     background: url(./assets/bg-desktop-light.jpg) no-repeat top center/cover;
     --text-color: black;
+    height: 100vh;
 }
 
 #container-light {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     margin: 56px auto 0px;
     padding: 0 24px;
 }
@@ -178,6 +183,7 @@ footer {
     position: absolute;
     top: 50%;
     left: 0;
+    animation: slide-back 0.2s;
     z-index: 1;
     transform: translateY(-50%);
 }
@@ -246,4 +252,25 @@ footer {
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+}
+
+/* animation */
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
 }
